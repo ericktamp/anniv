@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Safari - Shinigami Manga Reader</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+            body {
+                font-family: "Inter", sans-serif;
+                background-color: #0b0b0b; /* Dark theme khas situs manga */
+                color: #e4e4e4;
+                overflow-x: hidden;
+            }
+
+            /* Safari UI Components */
+            .safari-toolbar {
+                background: rgba(40, 40, 40, 0.8);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .address-bar {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                width: 50%;
+                transition: 0.3s;
+            }
+
+            /* Manga Specific Styles */
+            .manga-card {
+                background: #1a1a1a;
+                border-radius: 8px;
+                overflow: hidden;
+                transition: transform 0.3s;
+            }
+            .manga-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .shinigami-accent {
+                color: #ff3e3e;
+            } /* Warna merah khas Shinigami */
+            .shinigami-bg {
+                background-color: #ff3e3e;
+            }
+
+            .chapter-list::-webkit-scrollbar {
+                width: 6px;
+            }
+            .chapter-list::-webkit-scrollbar-thumb {
+                background: #333;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body class="flex flex-col h-screen">
+        <div
+            class="safari-toolbar w-full pt-10 pb-3 px-4 flex items-center justify-between sticky top-0 z-50"
+        >
+            <div class="flex items-center space-x-4">
+                <div class="flex space-x-2">
+                    <a
+                        href="index.html"
+                        class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+                    >
+                        <i class="fas fa-chevron-left text-white/80"></i>
+                    </a>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center rounded-lg text-white/30 cursor-not-allowed"
+                    >
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <i class="fas fa-sidebar text-white/60 text-lg"></i>
+            </div>
+
+            <div
+                class="address-bar py-1.5 px-4 flex items-center justify-center text-sm text-white/90"
+            >
+                <i class="fas fa-lock text-[10px] mr-2 text-white/40"></i>
+                <span class="font-light opacity-80"
+                    >shinigami.id/manga/one-year-with-you</span
+                >
+            </div>
+
+            <div class="flex items-center space-x-5 text-white/70">
+                <i
+                    class="fas fa-share text-sm hover:text-white cursor-pointer"
+                ></i>
+                <i
+                    class="fas fa-plus text-sm hover:text-white cursor-pointer"
+                ></i>
+                <i
+                    class="fas fa-copy text-sm hover:text-white cursor-pointer"
+                ></i>
+            </div>
+        </div>
+
+        <main class="flex-grow overflow-y-auto">
+            <div
+                class="bg-[#121212] py-4 px-8 border-b border-white/5 flex items-center justify-between"
+            >
+                <div class="flex items-center space-x-2">
+                    <div
+                        class="w-10 h-10 shinigami-bg rounded flex items-center justify-center"
+                    >
+                        <i class="fas fa-skull text-white text-xl"></i>
+                    </div>
+                    <h1
+                        class="text-2xl font-black tracking-tighter uppercase italic"
+                    >
+                        Shinigami<span class="shinigami-accent">ID</span>
+                    </h1>
+                </div>
+                <div
+                    class="hidden md:flex space-x-6 text-sm font-bold uppercase tracking-widest text-white/60"
+                >
+                    <span class="hover:text-white cursor-pointer"
+                        >Manga List</span
+                    >
+                    <span class="hover:text-white cursor-pointer">Project</span>
+                    <span class="shinigami-accent cursor-pointer"
+                        >Anniversary Special</span
+                    >
+                </div>
+            </div>
+
+            <div class="max-w-6xl mx-auto p-6 md:p-10">
+                <div class="flex flex-col md:flex-row gap-10">
+                    <div class="w-full md:w-80 flex-shrink-0">
+                        <div
+                            class="rounded-xl overflow-hidden shadow-2xl border-4 border-[#222]"
+                        >
+                            <img
+                                src="image1 (4).jpg"
+                                class="w-full h-[450px] object-cover"
+                                alt="Cover"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="flex-grow">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span
+                                class="bg-red-600 text-[10px] font-bold px-2 py-1 rounded uppercase"
+                                >Hot</span
+                            >
+                            <span
+                                class="bg-blue-600 text-[10px] font-bold px-2 py-1 rounded uppercase"
+                                >Completed</span
+                            >
+                        </div>
+                        <h2
+                            class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight"
+                        >
+                            My Girlfriend is the Best Reader: Kayla Edition
+                        </h2>
+                        <p class="text-white/40 mb-6 italic">
+                            Alternative Title: 1 Tahun Bersama Kayla
+                        </p>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                            <div class="bg-[#1a1a1a] p-3 rounded">
+                                <p
+                                    class="text-[10px] text-white/40 uppercase font-bold"
+                                >
+                                    Status
+                                </p>
+                                <p class="text-sm font-semibold text-white/90">
+                                    Ongoing Forever
+                                </p>
+                            </div>
+                            <div class="bg-[#1a1a1a] p-3 rounded">
+                                <p
+                                    class="text-[10px] text-white/40 uppercase font-bold"
+                                >
+                                    Author
+                                </p>
+                                <p class="text-sm font-semibold text-white/90">
+                                    Your Boyfriend
+                                </p>
+                            </div>
+                            <div class="bg-[#1a1a1a] p-3 rounded">
+                                <p
+                                    class="text-[10px] text-white/40 uppercase font-bold"
+                                >
+                                    Type
+                                </p>
+                                <p class="text-sm font-semibold text-white/90">
+                                    Romance/Action
+                                </p>
+                            </div>
+                            <div class="bg-[#1a1a1a] p-3 rounded">
+                                <p
+                                    class="text-[10px] text-white/40 uppercase font-bold"
+                                >
+                                    Rating
+                                </p>
+                                <p
+                                    class="text-sm font-semibold shinigami-accent font-bold"
+                                >
+                                    ⭐ 10/10
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="mb-8 bg-[#1a1a1a] p-6 rounded-xl border-l-4 shinigami-bg"
+                        >
+                            <h3 class="font-bold text-lg mb-2">Synopsis:</h3>
+                            <p class="text-white/70 leading-relaxed italic">
+                                "Menceritakan tentang seorang gadis luar biasa
+                                bernama Kayla yang sangat hobi membaca manga.
+                                Tak disangka, tepat di hari jadinya yang ke-1
+                                tahun, dia menemukan sebuah chapter rahasia yang
+                                ditulis khusus untuknya. Chapter ini tidak
+                                berisi pertarungan ninja atau sihir, tapi berisi
+                                janji setia dan kenangan indah." (Idek why i
+                                make this btw..)
+                            </p>
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-list-ul mr-3 shinigami-accent"></i>
+                            Chapter List
+                        </h3>
+                        <div
+                            class="chapter-list space-y-2 max-h-60 overflow-y-auto pr-2"
+                        >
+                            <div
+                                class="bg-[#222] p-4 rounded-lg flex justify-between items-center hover:bg-[#282828] cursor-pointer border border-white/5"
+                            >
+                                <div>
+                                    <span class="font-bold text-white/90"
+                                        >Chapter 365:</span
+                                    >
+                                    <span class="text-white/60 ml-2"
+                                        >The Anniversary Gift ❤️</span
+                                    >
+                                </div>
+                                <span
+                                    class="text-[10px] text-white/40 uppercase"
+                                    >Today</span
+                                >
+                            </div>
+                            <div
+                                class="bg-[#151515] p-4 rounded-lg flex justify-between items-center opacity-50"
+                            >
+                                <div>
+                                    <span class="font-bold">Chapter 001:</span>
+                                    <span class="ml-2"
+                                        >Where It All Started</span
+                                    >
+                                </div>
+                                <span class="text-[10px]">1 Year Ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="fixed bottom-10 right-10 z-[60]">
+            <button
+                onclick="showSpecialNote()"
+                class="shinigami-bg px-8 py-4 rounded-full font-black uppercase tracking-tighter shadow-[0_0_20px_rgba(255,62,62,0.4)] hover:scale-105 transition"
+            >
+                Start Reading Special Chapter
+            </button>
+        </div>
+
+        <div
+            id="modal-note"
+            class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-6"
+        >
+            <div class="max-w-2xl text-center">
+                <h2 class="text-5xl font-black shinigami-accent mb-6">
+                    Chapter 365: Kayla's Love
+                </h2>
+                <p class="text-xl text-white/80 leading-relaxed mb-8 italic">
+                    "Kayla, aku tau kamu lebih suka baca petualangan di manga
+                    daripada dengerin gombalan biasa. Jadi di 'Safari' ini, aku
+                    mau bilang kalau satu tahun ini adalah arc terbaik dalam
+                    hidupku. Terima kasih sudah jadi karakter utama di hatiku.
+                    Happy 1st Anniversary!"
+                </p>
+                <button
+                    onclick="
+                        document.getElementById('modal-note').style.display =
+                            'none'
+                    "
+                    class="border border-white/30 px-6 py-2 rounded-lg hover:bg-white/10 transition"
+                >
+                    Close Reader
+                </button>
+            </div>
+        </div>
+
+        <script>
+            function showSpecialNote() {
+                document.getElementById("modal-note").style.display = "flex";
+            }
+        </script>
+    </body>
+</html>

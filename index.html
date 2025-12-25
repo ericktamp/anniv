@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MacBook Pro - For Kayla</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                font-family:
+                    "Inter",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    Helvetica,
+                    Arial,
+                    sans-serif;
+                overflow: hidden;
+                background: #000;
+            }
+            /* Background Wallpaper Inspired by macOS Sonoma */
+            .desktop-bg {
+                background: url("https://www.apple.com/v/macos/sonoma/p/images/overview/hero/wallpaper_light__c5l1i1q9qaym_large.jpg")
+                    no-repeat center center;
+                background-size: cover;
+                height: 100vh;
+                width: 100vw;
+                position: absolute;
+                z-index: -1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .apple-logo-bg {
+                font-size: 15rem;
+                color: rgba(255, 255, 255, 0.03);
+                filter: blur(2px);
+            }
+            /* Enhanced Glassmorphism for macOS-like Blur */
+            .glass {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(40px) saturate(180%);
+                -webkit-backdrop-filter: blur(40px) saturate(180%);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            }
+            .dock-item {
+                transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                cursor: pointer;
+            }
+            .dock-item:hover {
+                transform: scale(1.5) translateY(-10px);
+                margin: 0 20px;
+            }
+            .window {
+                position: absolute;
+                display: none;
+                box-shadow:
+                    0 20px 60px rgba(0, 0, 0, 0.5),
+                    0 0 0 1px rgba(255, 255, 255, 0.05);
+                border-radius: 16px;
+                overflow: hidden;
+                resize: both;
+                min-width: 300px;
+                min-height: 200px;
+                max-width: 90vw;
+                max-height: 90vh;
+            }
+            .traffic-light {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                margin-right: 6px;
+                transition: opacity 0.3s;
+            }
+            .traffic-light:hover {
+                opacity: 0.8;
+            }
+            /* Improved Lock Screen with macOS Animation */
+            #lock-screen {
+                position: fixed;
+                inset: 0;
+                z-index: 9999;
+                background: rgba(0, 0, 0, 0.85);
+                backdrop-filter: blur(50px);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition:
+                    opacity 0.8s ease-in-out,
+                    transform 0.8s ease-in-out;
+            }
+            .btn-unlock {
+                background: rgba(255, 255, 255, 0.25);
+                padding: 12px 24px;
+                border-radius: 50px;
+                color: white;
+                margin-top: 24px;
+                cursor: pointer;
+                transition:
+                    background 0.3s,
+                    transform 0.3s;
+            }
+            .btn-unlock:hover {
+                background: rgba(255, 255, 255, 0.45);
+                transform: scale(1.05);
+            }
+            /* Notification with Slide-in Animation */
+            .notification {
+                position: fixed;
+                top: 60px;
+                right: -400px;
+                width: 350px;
+                transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                z-index: 1000;
+            }
+            .widget {
+                width: 160px;
+                height: 160px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            /* Message Input Styling */
+            .message-input {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 12px;
+                display: flex;
+                align-items: center;
+            }
+            .message-input input {
+                flex: 1;
+                background: rgba(255, 255, 255, 0.2);
+                border: none;
+                border-radius: 20px;
+                padding: 10px 16px;
+                color: white;
+                font-size: 14px;
+            }
+            .message-input button {
+                background: #007aff;
+                color: white;
+                border: none;
+                border-radius: 20px;
+                padding: 10px 16px;
+                margin-left: 8px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+            .message-input button:hover {
+                background: #0062cc;
+            }
+            /* Added Logo in Dock or Menu */
+            .logo-added {
+                width: 48px;
+                height: 48px;
+                border-radius: 12px;
+            }
+            /* Game Canvas */
+            #game-canvas {
+                background: #000;
+                border: 1px solid #fff;
+            }
+            /* Photos Grid */
+            .photos-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 10px;
+                padding: 20px;
+            }
+            .photos-grid img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: transform 0.3s;
+            }
+            .photos-grid img:hover {
+                transform: scale(1.05);
+            }
+            /* Trash Window */
+            .trash-content {
+                padding: 20px;
+                text-align: center;
+                color: white;
+            }
+            /* Safari Window */
+            #win-safari iframe {
+                width: 100%;
+                height: calc(100% - 48px);
+                border: none;
+            }
+            /* Calendar Window */
+            .calendar {
+                padding: 20px;
+                color: white;
+            }
+            .calendar table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .calendar th,
+            .calendar td {
+                padding: 10px;
+                text-align: center;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="lock-screen">
+            <div
+                class="w-36 h-36 rounded-full overflow-hidden border-4 border-white/40 shadow-lg mb-6"
+            >
+                <img
+                    src="https://ui-avatars.com/api/?name=Kayla&background=random&size=144"
+                    alt="Kayla"
+                />
+            </div>
+            <h1 class="text-white text-4xl font-bold tracking-tight">
+                Welcome back, Kayla
+            </h1>
+            <p class="text-white/70 mt-3 text-lg">1 Year Together ❤️</p>
+            <div class="btn-unlock" onclick="unlock()">Click to Enter</div>
+        </div>
+        <div class="desktop-bg">
+            <i class="fab fa-apple apple-logo-bg"></i>
+        </div>
+        <nav
+            class="w-full h-8 glass flex items-center justify-between px-5 text-white text-[14px] font-medium fixed top-0 z-[100] shadow-sm"
+        >
+            <div class="flex items-center space-x-5">
+                <i class="fab fa-apple text-xl"></i>
+                <span class="font-semibold">Anniversary</span>
+                <span class="opacity-70 hover:opacity-100 transition"
+                    >History</span
+                >
+                <span class="opacity-70 hover:opacity-100 transition"
+                    >Memories</span
+                >
+                <span class="opacity-70 hover:opacity-100 transition"
+                    >Love</span
+                >
+            </div>
+            <div class="flex items-center space-x-5">
+                <i class="fas fa-wifi text-lg"></i>
+                <i class="fas fa-battery-full text-lg"></i>
+                <i class="fas fa-magnifying-glass text-lg cursor-pointer"></i>
+                <span id="clock">12:00 PM</span>
+            </div>
+        </nav>
+        <div class="absolute top-16 right-8 space-y-5">
+            <div
+                class="widget glass p-5 flex flex-col justify-between text-white shadow-md"
+            >
+                <span class="text-xs font-semibold uppercase opacity-70"
+                    >Anniversary</span
+                >
+                <span class="text-4xl font-bold">365</span>
+                <span class="text-sm opacity-80">Days of Love</span>
+            </div>
+            <div class="widget glass p-5 text-white shadow-md">
+                <span class="text-xs font-semibold uppercase opacity-70"
+                    >Weather</span
+                >
+                <div class="text-3xl mt-2">☀️ 32°</div>
+                <p class="text-xs mt-2 opacity-80">Bright like your smile</p>
+            </div>
+        </div>
+        <div
+            id="notif"
+            class="notification glass p-5 rounded-3xl flex items-start space-x-4 text-white shadow-lg"
+        >
+            <div class="bg-blue-600 p-3 rounded-xl">
+                <i class="fas fa-comment text-lg"></i>
+            </div>
+            <div>
+                <p class="text-sm font-semibold">iMessage</p>
+                <p class="text-base">You have a special message!</p>
+            </div>
+        </div>
+        <div
+            id="win-msg"
+            class="window glass w-[450px] h-[550px] top-24 left-24"
+        >
+            <div class="h-12 glass flex items-center px-5">
+                <div class="flex space-x-3">
+                    <div
+                        onclick="closeApp('win-msg')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-msg')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-msg')"
+                    ></div>
+                </div>
+            </div>
+            <div
+                id="msg-content"
+                class="p-5 h-[calc(100%-100px)] overflow-y-auto"
+            >
+                <div
+                    class="bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none ml-12 mb-5 text-base max-w-[80%]"
+                >
+                    Hey Kayla, tau gak hari ini hari apa?
+                </div>
+                <div
+                    class="bg-gray-800/70 text-white p-4 rounded-2xl rounded-tl-none mr-12 mb-5 text-base max-w-[80%]"
+                >
+                    Hari apa emang? 😜
+                </div>
+                <div
+                    class="bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none ml-12 mb-5 text-base max-w-[80%] font-semibold"
+                >
+                    Happy 1st Anniversary! I love you so much! ❤️
+                </div>
+            </div>
+            <div class="message-input">
+                <input type="text" id="msg-input" placeholder="iMessage" />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        <div
+            id="win-note"
+            class="window bg-[#fdfbf5] w-[550px] h-[450px] top-48 left-[45%]"
+        >
+            <div class="h-12 bg-gray-300/30 flex items-center px-5">
+                <div class="flex space-x-3">
+                    <div
+                        onclick="closeApp('win-note')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-note')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-note')"
+                    ></div>
+                </div>
+            </div>
+            <div class="p-10 font-serif text-lg leading-loose">
+                <h2 class="text-3xl font-bold mb-6">Dear Kayla,</h2>
+                <p class="leading-relaxed">
+                    Satu tahun belakangan ini adalah some of time i've spend
+                    with you dan itu sebagian dari yang terbaik dalam hidupku.
+                    Terima kasih sudah menjadi alasan aku tersenyum setiap hari.
+                    Kita sudah melewati banyak hal, dan aku gak sabar buat
+                    tahun-tahun berikutnya bareng kamu.
+                    <br /><br />
+                    With love, <br />
+                    Erick
+                </p>
+            </div>
+        </div>
+        <div
+            id="win-spotify"
+            class="window glass w-[900px] h-[550px] top-36 left-[20%]"
+        >
+            <div class="h-12 glass flex items-center px-5">
+                <div class="flex space-x-3">
+                    <div
+                        onclick="closeApp('win-spotify')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-spotify')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-spotify')"
+                    ></div>
+                </div>
+            </div>
+            <div
+                style="
+                    height: calc(100% - 48px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    color: white;
+                    background: #000;
+                "
+            >
+                <h2 class="text-2xl mb-4">Page Not Responding</h2>
+                <a
+                    href="spotify.html"
+                    class="bg-blue-600 px-6 py-3 rounded-full text-white no-underline hover:bg-blue-700 transition"
+                    >Home</a
+                >
+            </div>
+        </div>
+        <div
+            id="win-photos"
+            class="window glass w-[700px] h-[500px] top-28 left-[30%]"
+        >
+            <div class="h-12 glass flex items-center px-5">
+                <div class="flex space-x-3">
+                    <div
+                        onclick="closeApp('win-photos')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-photos')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-photos')"
+                    ></div>
+                </div>
+            </div>
+            <div
+                class="photos-grid overflow-y-auto"
+                style="height: calc(100% - 48px)"
+            >
+                <img src="image1 (1).jpg" alt="Photo 1" />
+                <img src="image1 (2).jpg" alt="Photo 2" />
+                <img src="image1 (3).jpg" alt="Photo 3" />
+                <img src="image1 (4).jpg" alt="Photo 4" />
+                <img src="image1 (5).jpg" alt="Photo 5" />
+                <img src="image1 (6).jpg" alt="Photo 6" />
+            </div>
+        </div>
+        <div
+            id="win-trash"
+            class="window glass w-[400px] h-[300px] top-40 left-[50%]"
+        >
+            <div class="h-12 glass flex items-center px-5">
+                <div class="flex space-x-3">
+                    <div
+                        onclick="closeApp('win-trash')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-trash')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-trash')"
+                    ></div>
+                </div>
+            </div>
+            <div class="trash-content" style="height: calc(100% - 48px)">
+                <i class="fas fa-trash fa-5x mb-4"></i>
+                <p>Your Trash is Empty</p>
+            </div>
+        </div>
+        <div
+            id="win-game"
+            class="window glass w-[600px] h-[500px] top-32 left-[25%]"
+        >
+            <div class="h-12 glass flex items-center px-5">
+                <div class="flex space-x-3">
+                    <div
+                        onclick="closeApp('win-game')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-game')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-game')"
+                    ></div>
+                </div>
+            </div>
+            <canvas id="game-canvas" width="580" height="450"></canvas>
+        </div>
+        <div
+            id="win-safari"
+            class="window glass w-[800px] h-[600px] top-20 left-[15%]"
+        >
+            <div class="h-12 glass flex items-center px-5">
+                <div class="flex space-x-3">
+                    <div
+                        onclick="closeApp('win-safari')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-safari')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-safari')"
+                    ></div>
+                </div>
+            </div>
+            <div
+                style="
+                    height: calc(100% - 48px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    color: white;
+                    background: #000;
+                "
+            >
+                <h2 class="text-2xl mb-4">Page Not Responding</h2>
+                <a
+                    href="safari.html"
+                    class="bg-blue-600 px-6 py-3 rounded-full text-white no-underline hover:bg-blue-700 transition"
+                    >Click Here</a
+                >
+            </div>
+        </div>
+        <div
+            id="win-calendar"
+            class="window glass w-[500px] h-[400px] top-48 left-[40%]"
+        >
+            <div class="h-12 glass flex items-center px-5">
+                <div class="flex space-x-3">
+                    <div
+                        onclick="closeApp('win-calendar')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-calendar')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-calendar')"
+                    ></div>
+                </div>
+            </div>
+            <div
+                class="calendar"
+                style="height: calc(100% - 48px); overflow-y: auto"
+            >
+                <h2 class="text-2xl mb-4">December 2025</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>💘</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div
+            class="fixed bottom-6 left-1/2 -translate-x-1/2 h-20 glass rounded-3xl flex items-center px-6 space-x-6 z-[100] shadow-xl"
+        >
+            <img
+                onclick="openApp('win-msg')"
+                src="https://tse4.mm.bing.net/th/id/OIP.QPG_lUT6eExjCn6FOX-5NAHaHa?pid=Api&P=0&h=180"
+                class="dock-item w-14 h-14 rounded-xl"
+                alt="iMessage Logo"
+            />
+            <img
+                onclick="openApp('win-spotify')"
+                src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
+                class="dock-item w-14 h-14 rounded-xl"
+            />
+            <img
+                onclick="openApp('win-note')"
+                src="https://tse2.mm.bing.net/th/id/OIP.Ir3TuabCZRZWAHkZWI8GoAHaHa?pid=Api&P=0&h=180"
+                class="dock-item w-14 h-14 rounded-xl"
+            />
+            <img
+                onclick="openApp('win-photos')"
+                src="https://tse1.mm.bing.net/th/id/OIP.-nI8lRtBeNvuF6v7jHaRkgHaHa?pid=Api&P=0&h=180"
+                class="dock-item w-14 h-14 rounded-xl"
+            />
+            <img
+                onclick="openApp('win-trash')"
+                src="https://tse3.mm.bing.net/th/id/OIP.BFnVyxjETCo8UFz321sBOAHaJG?pid=Api&P=0&h=180"
+                class="dock-item w-14 h-14 rounded-xl"
+            />
+            <img
+                onclick="openApp('win-game')"
+                src="https://tse2.mm.bing.net/th/id/OIP.aBQ5vSZW_S528UoMgSAtnAHaHa?pid=Api&P=0&h=180"
+                class="dock-item w-14 h-14 rounded-xl"
+                alt="Game Center"
+            />
+            <img
+                onclick="openApp('win-safari')"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/1024px-Safari_browser_logo.svg.png"
+                class="dock-item w-14 h-14 rounded-xl"
+                alt="Safari"
+            />
+            <img
+                onclick="openApp('win-calendar')"
+                src="https://tse2.mm.bing.net/th/id/OIP.lcBuV6Ikj7W__uSqy9HBmgHaHa?pid=Api&P=0&h=180"
+                class="dock-item w-14 h-14 rounded-xl"
+                alt="Calendar"
+            />
+            <div class="w-[2px] h-12 bg-white/20 mx-2"></div>
+            <img
+                src="https://ui-avatars.com/api/?name=Love&background=ff69b4&color=fff&size=56"
+                class="dock-item w-14 h-14 rounded-xl logo-added"
+                alt="Love Logo"
+            />
+        </div>
+        <script>
+            function updateTime() {
+                const now = new Date();
+                document.getElementById("clock").innerText =
+                    now.toLocaleTimeString("en-US", {
+                        hour: "numeric",
+                        minute: "2-digit",
+                        hour12: true,
+                    });
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
+            function unlock() {
+                const ls = document.getElementById("lock-screen");
+                ls.style.opacity = 0;
+                ls.style.transform = "translateY(-100%)";
+                setTimeout(() => {
+                    ls.style.display = "none";
+                    document.getElementById("notif").style.right = "24px";
+                    setTimeout(() => {
+                        openApp("win-msg");
+                    }, 1200);
+                }, 800);
+            }
+            function openApp(id) {
+                const win = document.getElementById(id);
+                win.style.display = "block";
+                win.style.zIndex = 50;
+                if (win.dataset.minimized === "true") {
+                    win.style.transform = "scale(1)";
+                    win.style.opacity = 1;
+                    win.dataset.minimized = "false";
+                }
+                if (id === "win-game") {
+                    startGame();
+                }
+            }
+            function closeApp(id) {
+                document.getElementById(id).style.display = "none";
+            }
+            function minimizeApp(id) {
+                const win = document.getElementById(id);
+                win.style.transform = "scale(0.2) translateY(100vh)";
+                win.style.opacity = 0;
+                win.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+                win.dataset.minimized = "true";
+                setTimeout(() => {
+                    win.style.display = "none";
+                }, 500);
+            }
+            function fullscreenApp(id) {
+                const win = document.getElementById(id);
+                if (win.style.width === "100vw") {
+                    win.style.width = win.dataset.originalWidth;
+                    win.style.height = win.dataset.originalHeight;
+                    win.style.top = win.dataset.originalTop;
+                    win.style.left = win.dataset.originalLeft;
+                } else {
+                    win.dataset.originalWidth = win.style.width;
+                    win.dataset.originalHeight = win.style.height;
+                    win.dataset.originalTop = win.style.top;
+                    win.dataset.originalLeft = win.style.left;
+                    win.style.width = "100vw";
+                    win.style.height = "calc(100vh - 8rem)";
+                    win.style.top = "4rem";
+                    win.style.left = "0";
+                }
+            }
+            function sendMessage() {
+                const input = document.getElementById("msg-input");
+                const content = document.getElementById("msg-content");
+                if (input.value.trim() === "") return;
+
+                const userMsg = document.createElement("div");
+                userMsg.className =
+                    "bg-gray-800/70 text-white p-4 rounded-2xl rounded-tl-none mr-12 mb-5 text-base max-w-[80%]";
+                userMsg.textContent = input.value;
+                content.appendChild(userMsg);
+
+                setTimeout(() => {
+                    const replyMsg = document.createElement("div");
+                    replyMsg.className =
+                        "bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none ml-12 mb-5 text-base max-w-[80%]";
+                    replyMsg.textContent =
+                        "I love you too! Can't wait for more years together! ❤️";
+                    content.appendChild(replyMsg);
+                    content.scrollTop = content.scrollHeight;
+                }, 1000);
+
+                input.value = "";
+                content.scrollTop = content.scrollHeight;
+            }
+            // Simple Snake Game
+            function startGame() {
+                const canvas = document.getElementById("game-canvas");
+                const ctx = canvas.getContext("2d");
+                const grid = 20;
+                let snake = [{ x: 10, y: 10 }];
+                let food = {
+                    x: Math.floor(Math.random() * (canvas.width / grid)),
+                    y: Math.floor(Math.random() * (canvas.height / grid)),
+                };
+                let dx = 1,
+                    dy = 0;
+                let score = 0;
+
+                function draw() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = "#fff";
+                    snake.forEach((part) => {
+                        ctx.fillRect(
+                            part.x * grid,
+                            part.y * grid,
+                            grid - 2,
+                            grid - 2,
+                        );
+                    });
+                    ctx.fillStyle = "#f00";
+                    ctx.fillRect(
+                        food.x * grid,
+                        food.y * grid,
+                        grid - 2,
+                        grid - 2,
+                    );
+                }
+
+                function update() {
+                    const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+                    if (head.x === food.x && head.y === food.y) {
+                        score++;
+                        food = {
+                            x: Math.floor(
+                                Math.random() * (canvas.width / grid),
+                            ),
+                            y: Math.floor(
+                                Math.random() * (canvas.height / grid),
+                            ),
+                        };
+                    } else {
+                        snake.pop();
+                    }
+                    snake.unshift(head);
+                    if (
+                        head.x < 0 ||
+                        head.x >= canvas.width / grid ||
+                        head.y < 0 ||
+                        head.y >= canvas.height / grid ||
+                        snake
+                            .slice(1)
+                            .some(
+                                (part) =>
+                                    part.x === head.x && part.y === head.y,
+                            )
+                    ) {
+                        alert("Game Over! Score: " + score);
+                        snake = [{ x: 10, y: 10 }];
+                        dx = 1;
+                        dy = 0;
+                        score = 0;
+                    }
+                }
+
+                function gameLoop() {
+                    update();
+                    draw();
+                }
+
+                setInterval(gameLoop, 100);
+
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "ArrowUp" && dy !== 1) {
+                        dx = 0;
+                        dy = -1;
+                    }
+                    if (e.key === "ArrowDown" && dy !== -1) {
+                        dx = 0;
+                        dy = 1;
+                    }
+                    if (e.key === "ArrowLeft" && dx !== 1) {
+                        dx = -1;
+                        dy = 0;
+                    }
+                    if (e.key === "ArrowRight" && dx !== -1) {
+                        dx = 1;
+                        dy = 0;
+                    }
+                });
+            }
+            const draggableWindows = document.querySelectorAll(".window");
+            draggableWindows.forEach((win) => {
+                let isDragging = false;
+                let startX, startY;
+                const header = win.querySelector(".h-12");
+                if (!header) return;
+                header.style.cursor = "move";
+                header.addEventListener("mousedown", (e) => {
+                    if (e.target.classList.contains("traffic-light")) return;
+                    isDragging = true;
+                    startX = e.clientX - win.offsetLeft;
+                    startY = e.clientY - win.offsetTop;
+                    draggableWindows.forEach((w) => (w.style.zIndex = 40));
+                    win.style.zIndex = 50;
+                });
+                document.addEventListener("mousemove", (e) => {
+                    if (!isDragging) return;
+                    let newLeft = e.clientX - startX;
+                    let newTop = e.clientY - startY;
+                    newLeft = Math.max(
+                        0,
+                        Math.min(window.innerWidth - win.offsetWidth, newLeft),
+                    );
+                    newTop = Math.max(
+                        0,
+                        Math.min(window.innerHeight - win.offsetHeight, newTop),
+                    );
+                    win.style.left = newLeft + "px";
+                    win.style.top = newTop + "px";
+                });
+                document.addEventListener(
+                    "mouseup",
+                    () => (isDragging = false),
+                );
+            });
+            document
+                .getElementById("msg-input")
+                .addEventListener("keypress", (e) => {
+                    if (e.key === "Enter") sendMessage();
+                });
+        </script>
+    </body>
+</html>
