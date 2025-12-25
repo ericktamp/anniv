@@ -2,23 +2,39 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
         <title>MacBook Pro - For Kayla</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
-            body, html {
+            body,
+            html {
                 margin: 0;
                 padding: 0;
                 height: 100%;
-                font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                font-family:
+                    "Inter",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    Helvetica,
+                    Arial,
+                    sans-serif;
                 overflow: hidden;
                 background: #000;
                 touch-action: manipulation;
             }
             .desktop-bg {
-                background: url("https://www.apple.com/v/macos/sonoma/p/images/overview/hero/wallpaper_light__c5l1i1q9qaym_large.jpg") no-repeat center center;
+                background: url("https://www.apple.com/v/macos/sonoma/p/images/overview/hero/wallpaper_light__c5l1i1q9qaym_large.jpg")
+                    no-repeat center center;
                 background-size: cover;
                 height: 100vh;
                 width: 100vw;
@@ -40,7 +56,9 @@
             .window {
                 position: absolute;
                 display: none;
-                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+                box-shadow:
+                    0 20px 60px rgba(0, 0, 0, 0.5),
+                    0 0 0 1px rgba(255, 255, 255, 0.05);
                 border-radius: 16px;
                 overflow: hidden;
                 resize: both;
@@ -66,7 +84,9 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+                transition:
+                    opacity 0.8s ease-in-out,
+                    transform 0.8s ease-in-out;
             }
             .btn-unlock {
                 background: rgba(255, 255, 255, 0.25);
@@ -75,7 +95,9 @@
                 color: white;
                 margin-top: 24px;
                 cursor: pointer;
-                transition: background 0.3s, transform 0.3s;
+                transition:
+                    background 0.3s,
+                    transform 0.3s;
             }
             .notification {
                 position: fixed;
@@ -154,7 +176,8 @@
                 width: 100%;
                 border-collapse: collapse;
             }
-            .calendar th, .calendar td {
+            .calendar th,
+            .calendar td {
                 padding: 10px;
                 text-align: center;
                 border: 1px solid rgba(255, 255, 255, 0.2);
@@ -286,11 +309,18 @@
     </head>
     <body>
         <div id="lock-screen">
-            <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-white/40 shadow-lg mb-6">
-                <img src="https://ui-avatars.com/api/?name=Kayla&background=random&size=144" alt="Kayla" />
+            <div
+                class="w-36 h-36 rounded-full overflow-hidden border-4 border-white/40 shadow-lg mb-6"
+            >
+                <img
+                    src="https://ui-avatars.com/api/?name=Kayla&background=random&size=144"
+                    alt="Kayla"
+                />
             </div>
-            <h1 class="text-white text-4xl font-bold tracking-tight">Welcome back, Kayla</h1>
-            <p class="text-white/70 mt-3 text-lg">1 Year Together ❤️</p>
+            <h1 class="text-white text-4xl font-bold tracking-tight">
+                Welcome back, Kayla
+            </h1>
+            <p class="text-white/70 mt-3 text-lg">Welcome back hunny bunny sweety pie</p>
             <div class="btn-unlock" onclick="unlock()">Click to Enter</div>
         </div>
 
@@ -298,13 +328,21 @@
             <i class="fab fa-apple apple-logo-bg"></i>
         </div>
 
-        <nav class="w-full h-8 glass flex items-center justify-between px-5 text-white text-[14px] font-medium fixed top-0 z-[100] shadow-sm">
+        <nav
+            class="w-full h-8 glass flex items-center justify-between px-5 text-white text-[14px] font-medium fixed top-0 z-[100] shadow-sm"
+        >
             <div class="flex items-center space-x-5">
                 <i class="fab fa-apple text-xl"></i>
                 <span class="font-semibold">Anniversary</span>
-                <span class="opacity-70 hover:opacity-100 transition">History</span>
-                <span class="opacity-70 hover:opacity-100 transition">Memories</span>
-                <span class="opacity-70 hover:opacity-100 transition">Love</span>
+                <span class="opacity-70 hover:opacity-100 transition"
+                    >History</span
+                >
+                <span class="opacity-70 hover:opacity-100 transition"
+                    >Memories</span
+                >
+                <span class="opacity-70 hover:opacity-100 transition"
+                    >Love</span
+                >
             </div>
             <div class="flex items-center space-x-5">
                 <i class="fas fa-wifi text-lg"></i>
@@ -315,19 +353,28 @@
         </nav>
 
         <div class="absolute top-16 right-8 space-y-5">
-            <div class="widget glass p-5 flex flex-col justify-between text-white shadow-md">
-                <span class="text-xs font-semibold uppercase opacity-70">Anniversary</span>
+            <div
+                class="widget glass p-5 flex flex-col justify-between text-white shadow-md"
+            >
+                <span class="text-xs font-semibold uppercase opacity-70"
+                    >Anniversary</span
+                >
                 <span class="text-4xl font-bold">365</span>
                 <span class="text-sm opacity-80">Days of Love</span>
             </div>
             <div class="widget glass p-5 text-white shadow-md">
-                <span class="text-xs font-semibold uppercase opacity-70">Weather</span>
+                <span class="text-xs font-semibold uppercase opacity-70"
+                    >Weather</span
+                >
                 <div class="text-3xl mt-2">☀️ 32°</div>
                 <p class="text-xs mt-2 opacity-80">Bright like your smile</p>
             </div>
         </div>
 
-        <div id="notif" class="notification glass p-5 rounded-3xl flex items-start space-x-4 text-white shadow-lg">
+        <div
+            id="notif"
+            class="notification glass p-5 rounded-3xl flex items-start space-x-4 text-white shadow-lg"
+        >
             <div class="bg-blue-600 p-3 rounded-xl">
                 <i class="fas fa-comment text-lg"></i>
             </div>
@@ -338,22 +385,43 @@
         </div>
 
         <!-- WINDOWS -->
-        <div id="win-msg" class="window glass w-[450px] h-[550px] top-24 left-24">
+        <div
+            id="win-msg"
+            class="window glass w-[450px] h-[550px] top-24 left-24"
+        >
             <div class="h-12 glass flex items-center px-5">
                 <div class="flex space-x-3">
-                    <div onclick="closeApp('win-msg')" class="traffic-light bg-red-500 cursor-pointer"></div>
-                    <div class="traffic-light bg-yellow-500 cursor-pointer" onclick="minimizeApp('win-msg')"></div>
-                    <div class="traffic-light bg-green-500 cursor-pointer" onclick="fullscreenApp('win-msg')"></div>
+                    <div
+                        onclick="closeApp('win-msg')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-msg')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-msg')"
+                    ></div>
                 </div>
             </div>
-            <div id="msg-content" class="p-5 h-[calc(100%-100px)] overflow-y-auto">
-                <div class="bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none ml-12 mb-5 text-base max-w-[80%]">
+            <div
+                id="msg-content"
+                class="p-5 h-[calc(100%-100px)] overflow-y-auto"
+            >
+                <div
+                    class="bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none ml-12 mb-5 text-base max-w-[80%]"
+                >
                     Hey Kayla, tau gak hari ini hari apa?
                 </div>
-                <div class="bg-gray-800/70 text-white p-4 rounded-2xl rounded-tl-none mr-12 mb-5 text-base max-w-[80%]">
+                <div
+                    class="bg-gray-800/70 text-white p-4 rounded-2xl rounded-tl-none mr-12 mb-5 text-base max-w-[80%]"
+                >
                     Hari apa emang? 😜
                 </div>
-                <div class="bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none ml-12 mb-5 text-base max-w-[80%] font-semibold">
+                <div
+                    class="bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none ml-12 mb-5 text-base max-w-[80%] font-semibold"
+                >
                     Happy 1st Anniversary! I love you so much! ❤️
                 </div>
             </div>
@@ -363,20 +431,34 @@
             </div>
         </div>
 
-        <div id="win-note" class="window bg-[#fdfbf5] w-[550px] h-[450px] top-48 left-[45%]">
+        <div
+            id="win-note"
+            class="window bg-[#fdfbf5] w-[550px] h-[450px] top-48 left-[45%]"
+        >
             <div class="h-12 bg-gray-300/30 flex items-center px-5">
                 <div class="flex space-x-3">
-                    <div onclick="closeApp('win-note')" class="traffic-light bg-red-500 cursor-pointer"></div>
-                    <div class="traffic-light bg-yellow-500 cursor-pointer" onclick="minimizeApp('win-note')"></div>
-                    <div class="traffic-light bg-green-500 cursor-pointer" onclick="fullscreenApp('win-note')"></div>
+                    <div
+                        onclick="closeApp('win-note')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-note')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-note')"
+                    ></div>
                 </div>
             </div>
             <div class="p-10 font-serif text-lg leading-loose">
                 <h2 class="text-3xl font-bold mb-6">Dear Kayla,</h2>
                 <p class="leading-relaxed">
-                    Satu tahun belakangan ini adalah some of time i've spend with you dan itu sebagian dari yang terbaik dalam hidupku.
+                    Satu tahun belakangan ini adalah some of time i've spend
+                    with you dan itu sebagian dari yang terbaik dalam hidupku.
                     Terima kasih sudah menjadi alasan aku tersenyum setiap hari.
-                    Kita sudah melewati banyak hal, dan aku gak sabar buat tahun-tahun berikutnya bareng kamu.
+                    Kita sudah melewati banyak hal, dan aku gak sabar buat
+                    tahun-tahun berikutnya bareng kamu.
                     <br /><br />
                     With love, <br />
                     Erick
@@ -384,26 +466,64 @@
             </div>
         </div>
 
-        <div id="win-spotify" class="window glass w-[900px] h-[550px] top-36 left-[20%]">
+        <div
+            id="win-spotify"
+            class="window glass w-[900px] h-[550px] top-36 left-[20%]"
+        >
             <div class="h-12 glass flex items-center px-5">
                 <div class="flex space-x-3">
-                    <div onclick="closeApp('win-spotify')" class="traffic-light bg-red-500 cursor-pointer"></div>
-                    <div class="traffic-light bg-yellow-500 cursor-pointer" onclick="minimizeApp('win-spotify')"></div>
-                    <div class="traffic-light bg-green-500 cursor-pointer" onclick="fullscreenApp('win-spotify')"></div>
+                    <div
+                        onclick="closeApp('win-spotify')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-spotify')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-spotify')"
+                    ></div>
                 </div>
             </div>
-            <div style="height: calc(100% - 48px); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; background: #000;">
+            <div
+                style="
+                    height: calc(100% - 48px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    color: white;
+                    background: #000;
+                "
+            >
                 <h2 class="text-2xl mb-4">Page Not Responding</h2>
-                <a href="spotify.html" class="bg-blue-600 px-6 py-3 rounded-full text-white no-underline hover:bg-blue-700 transition">Home</a>
+                <a
+                    href="spotify.html"
+                    class="bg-blue-600 px-6 py-3 rounded-full text-white no-underline hover:bg-blue-700 transition"
+                    >Home</a
+                >
             </div>
         </div>
 
-        <div id="win-photos" class="window glass w-[700px] h-[500px] top-28 left-[30%]">
+        <div
+            id="win-photos"
+            class="window glass w-[700px] h-[500px] top-28 left-[30%]"
+        >
             <div class="h-12 glass flex items-center px-5">
                 <div class="flex space-x-3">
-                    <div onclick="closeApp('win-photos')" class="traffic-light bg-red-500 cursor-pointer"></div>
-                    <div class="traffic-light bg-yellow-500 cursor-pointer" onclick="minimizeApp('win-photos')"></div>
-                    <div class="traffic-light bg-green-500 cursor-pointer" onclick="fullscreenApp('win-photos')"></div>
+                    <div
+                        onclick="closeApp('win-photos')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-photos')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-photos')"
+                    ></div>
                 </div>
             </div>
             <div class="photos-grid">
@@ -416,12 +536,24 @@
             </div>
         </div>
 
-        <div id="win-trash" class="window glass w-[400px] h-[300px] top-40 left-[50%]">
+        <div
+            id="win-trash"
+            class="window glass w-[400px] h-[300px] top-40 left-[50%]"
+        >
             <div class="h-12 glass flex items-center px-5">
                 <div class="flex space-x-3">
-                    <div onclick="closeApp('win-trash')" class="traffic-light bg-red-500 cursor-pointer"></div>
-                    <div class="traffic-light bg-yellow-500 cursor-pointer" onclick="minimizeApp('win-trash')"></div>
-                    <div class="traffic-light bg-green-500 cursor-pointer" onclick="fullscreenApp('win-trash')"></div>
+                    <div
+                        onclick="closeApp('win-trash')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-trash')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-trash')"
+                    ></div>
                 </div>
             </div>
             <div class="trash-content">
@@ -430,52 +562,158 @@
             </div>
         </div>
 
-        <div id="win-game" class="window glass w-[600px] h-[500px] top-32 left-[25%]">
+        <div
+            id="win-game"
+            class="window glass w-[600px] h-[500px] top-32 left-[25%]"
+        >
             <div class="h-12 glass flex items-center px-5">
                 <div class="flex space-x-3">
-                    <div onclick="closeApp('win-game')" class="traffic-light bg-red-500 cursor-pointer"></div>
-                    <div class="traffic-light bg-yellow-500 cursor-pointer" onclick="minimizeApp('win-game')"></div>
-                    <div class="traffic-light bg-green-500 cursor-pointer" onclick="fullscreenApp('win-game')"></div>
+                    <div
+                        onclick="closeApp('win-game')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-game')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-game')"
+                    ></div>
                 </div>
             </div>
             <canvas id="game-canvas"></canvas>
         </div>
 
-        <div id="win-safari" class="window glass w-[800px] h-[600px] top-20 left-[15%]">
+        <div
+            id="win-safari"
+            class="window glass w-[800px] h-[600px] top-20 left-[15%]"
+        >
             <div class="h-12 glass flex items-center px-5">
                 <div class="flex space-x-3">
-                    <div onclick="closeApp('win-safari')" class="traffic-light bg-red-500 cursor-pointer"></div>
-                    <div class="traffic-light bg-yellow-500 cursor-pointer" onclick="minimizeApp('win-safari')"></div>
-                    <div class="traffic-light bg-green-500 cursor-pointer" onclick="fullscreenApp('win-safari')"></div>
+                    <div
+                        onclick="closeApp('win-safari')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-safari')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-safari')"
+                    ></div>
                 </div>
             </div>
-            <div style="height: calc(100% - 48px); display: flex; align-items: center; justify-content: center; flex-direction: column; color: white; background: #000;">
+            <div
+                style="
+                    height: calc(100% - 48px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    color: white;
+                    background: #000;
+                "
+            >
                 <h2 class="text-2xl mb-4">Page Not Responding</h2>
-                <a href="safari.html" class="bg-blue-600 px-6 py-3 rounded-full text-white no-underline hover:bg-blue-700 transition">Click Here</a>
+                <a
+                    href="safari.html"
+                    class="bg-blue-600 px-6 py-3 rounded-full text-white no-underline hover:bg-blue-700 transition"
+                    >Click Here</a
+                >
             </div>
         </div>
 
-        <div id="win-calendar" class="window glass w-[500px] h-[400px] top-48 left-[40%]">
+        <div
+            id="win-calendar"
+            class="window glass w-[500px] h-[400px] top-48 left-[40%]"
+        >
             <div class="h-12 glass flex items-center px-5">
                 <div class="flex space-x-3">
-                    <div onclick="closeApp('win-calendar')" class="traffic-light bg-red-500 cursor-pointer"></div>
-                    <div class="traffic-light bg-yellow-500 cursor-pointer" onclick="minimizeApp('win-calendar')"></div>
-                    <div class="traffic-light bg-green-500 cursor-pointer" onclick="fullscreenApp('win-calendar')"></div>
+                    <div
+                        onclick="closeApp('win-calendar')"
+                        class="traffic-light bg-red-500 cursor-pointer"
+                    ></div>
+                    <div
+                        class="traffic-light bg-yellow-500 cursor-pointer"
+                        onclick="minimizeApp('win-calendar')"
+                    ></div>
+                    <div
+                        class="traffic-light bg-green-500 cursor-pointer"
+                        onclick="fullscreenApp('win-calendar')"
+                    ></div>
                 </div>
             </div>
             <div class="calendar">
                 <h2 class="text-2xl mb-4">December 2025</h2>
                 <table>
                     <thead>
-                        <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
-                        <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
-                        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
-                        <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
-                        <tr><td>24</td><td>💘</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
-                        <tr><td>31</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>💘</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -484,23 +722,65 @@
         <!-- DOCK SCROLLABLE -->
         <div class="dock-container">
             <div class="dock">
-                <img onclick="openApp('win-msg')" src="https://tse4.mm.bing.net/th/id/OIP.QPG_lUT6eExjCn6FOX-5NAHaHa?pid=Api&P=0&h=180" class="dock-item rounded-xl" alt="iMessage" />
-                <img onclick="openApp('win-spotify')" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" class="dock-item rounded-xl" />
-                <img onclick="openApp('win-note')" src="https://tse2.mm.bing.net/th/id/OIP.Ir3TuabCZRZWAHkZWI8GoAHaHa?pid=Api&P=0&h=180" class="dock-item rounded-xl" />
-                <img onclick="openApp('win-photos')" src="https://tse1.mm.bing.net/th/id/OIP.-nI8lRtBeNvuF6v7jHaRkgHaHa?pid=Api&P=0&h=180" class="dock-item rounded-xl" />
-                <img onclick="openApp('win-trash')" src="https://tse3.mm.bing.net/th/id/OIP.BFnVyxjETCo8UFz321sBOAHaJG?pid=Api&P=0&h=180" class="dock-item rounded-xl" />
-                <img onclick="openApp('win-game')" src="https://tse2.mm.bing.net/th/id/OIP.aBQ5vSZW_S528UoMgSAtnAHaHa?pid=Api&P=0&h=180" class="dock-item rounded-xl" />
-                <img onclick="openApp('win-safari')" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/1024px-Safari_browser_logo.svg.png" class="dock-item rounded-xl" />
-                <img onclick="openApp('win-calendar')" src="https://tse2.mm.bing.net/th/id/OIP.lcBuV6Ikj7W__uSqy9HBmgHaHa?pid=Api&P=0&h=180" class="dock-item rounded-xl" />
+                <img
+                    onclick="openApp('win-msg')"
+                    src="https://tse4.mm.bing.net/th/id/OIP.QPG_lUT6eExjCn6FOX-5NAHaHa?pid=Api&P=0&h=180"
+                    class="dock-item rounded-xl"
+                    alt="iMessage"
+                />
+                <img
+                    onclick="openApp('win-spotify')"
+                    src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
+                    class="dock-item rounded-xl"
+                />
+                <img
+                    onclick="openApp('win-note')"
+                    src="https://tse2.mm.bing.net/th/id/OIP.Ir3TuabCZRZWAHkZWI8GoAHaHa?pid=Api&P=0&h=180"
+                    class="dock-item rounded-xl"
+                />
+                <img
+                    onclick="openApp('win-photos')"
+                    src="https://tse1.mm.bing.net/th/id/OIP.-nI8lRtBeNvuF6v7jHaRkgHaHa?pid=Api&P=0&h=180"
+                    class="dock-item rounded-xl"
+                />
+                <img
+                    onclick="openApp('win-trash')"
+                    src="https://tse3.mm.bing.net/th/id/OIP.BFnVyxjETCo8UFz321sBOAHaJG?pid=Api&P=0&h=180"
+                    class="dock-item rounded-xl"
+                />
+                <img
+                    onclick="openApp('win-game')"
+                    src="https://tse2.mm.bing.net/th/id/OIP.aBQ5vSZW_S528UoMgSAtnAHaHa?pid=Api&P=0&h=180"
+                    class="dock-item rounded-xl"
+                />
+                <img
+                    onclick="openApp('win-safari')"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/1024px-Safari_browser_logo.svg.png"
+                    class="dock-item rounded-xl"
+                />
+                <img
+                    onclick="openApp('win-calendar')"
+                    src="https://tse2.mm.bing.net/th/id/OIP.lcBuV6Ikj7W__uSqy9HBmgHaHa?pid=Api&P=0&h=180"
+                    class="dock-item rounded-xl"
+                />
                 <div class="dock-separator"></div>
-                <img src="https://ui-avatars.com/api/?name=Love&background=ff69b4&color=fff&size=56" class="dock-item rounded-xl" alt="Love" />
+                <img
+                    src="https://ui-avatars.com/api/?name=Love&background=ff69b4&color=fff&size=56"
+                    class="dock-item rounded-xl"
+                    alt="Love"
+                />
             </div>
         </div>
 
         <script>
             function updateTime() {
                 const now = new Date();
-                document.getElementById("clock").innerText = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true });
+                document.getElementById("clock").innerText =
+                    now.toLocaleTimeString("en-US", {
+                        hour: "numeric",
+                        minute: "2-digit",
+                        hour12: true,
+                    });
             }
             setInterval(updateTime, 1000);
             updateTime();
@@ -511,6 +791,8 @@
                 ls.style.transform = "translateY(-100%)";
                 setTimeout(() => {
                     ls.style.display = "none";
+
+                    // Munculkan notifikasi
                     const notif = document.getElementById("notif");
                     if (window.innerWidth <= 768) {
                         notif.style.right = "auto";
@@ -519,6 +801,26 @@
                     } else {
                         notif.style.right = "24px";
                     }
+
+                    // Otomatis hilang setelah 4 detik
+                    setTimeout(() => {
+                        notif.style.opacity = "0";
+                        notif.style.transform =
+                            window.innerWidth <= 768
+                                ? "translateX(-50%) scale(0.9)"
+                                : "translateY(-20px) scale(0.9)";
+                        notif.style.transition =
+                            "opacity 0.6s ease, transform 0.6s ease";
+
+                        // Hapus dari layar setelah animasi selesai
+                        setTimeout(() => {
+                            notif.style.display = "none";
+                            notif.style.opacity = "1"; // reset buat next time
+                            notif.style.transform = "";
+                        }, 600);
+                    }, 4000); // 4 detik muncul
+
+                    // Buka window message setelah notif muncul
                     setTimeout(() => openApp("win-msg"), 1200);
                 }, 800);
             }
@@ -545,7 +847,7 @@
                 win.style.opacity = 0;
                 win.style.transition = "transform 0.5s ease, opacity 0.5s ease";
                 win.dataset.minimized = "true";
-                setTimeout(() => win.style.display = "none", 500);
+                setTimeout(() => (win.style.display = "none"), 500);
             }
 
             function fullscreenApp(id) {
@@ -574,13 +876,16 @@
                 const content = document.getElementById("msg-content");
                 if (!input.value.trim()) return;
                 const userMsg = document.createElement("div");
-                userMsg.className = "bg-gray-800/70 text-white p-4 rounded-2xl rounded-tl-none mr-12 mb-5 text-base max-w-[80%]";
+                userMsg.className =
+                    "bg-gray-800/70 text-white p-4 rounded-2xl rounded-tl-none mr-12 mb-5 text-base max-w-[80%]";
                 userMsg.textContent = input.value;
                 content.appendChild(userMsg);
                 setTimeout(() => {
                     const reply = document.createElement("div");
-                    reply.className = "bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none ml-12 mb-5 text-base max-w-[80%]";
-                    reply.textContent = "I love you too! Can't wait for more years together! ❤️";
+                    reply.className =
+                        "bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none ml-12 mb-5 text-base max-w-[80%]";
+                    reply.textContent =
+                        "I love you too! Can't wait for more years together! ❤️";
                     content.appendChild(reply);
                     content.scrollTop = content.scrollHeight;
                 }, 1000);
@@ -594,90 +899,162 @@
                 canvas.width = canvas.parentElement.clientWidth - 40;
                 canvas.height = canvas.parentElement.clientHeight - 40;
                 const grid = 20;
-                let snake = [{x: 10, y: 10}];
-                let food = {x: Math.floor(Math.random() * (canvas.width/grid)), y: Math.floor(Math.random() * (canvas.height/grid))};
-                let dx = 1, dy = 0;
+                let snake = [{ x: 10, y: 10 }];
+                let food = {
+                    x: Math.floor(Math.random() * (canvas.width / grid)),
+                    y: Math.floor(Math.random() * (canvas.height / grid)),
+                };
+                let dx = 1,
+                    dy = 0;
                 let score = 0;
 
                 function draw() {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.fillStyle = "#fff";
-                    snake.forEach(p => ctx.fillRect(p.x*grid, p.y*grid, grid-2, grid-2));
+                    snake.forEach((p) =>
+                        ctx.fillRect(
+                            p.x * grid,
+                            p.y * grid,
+                            grid - 2,
+                            grid - 2,
+                        ),
+                    );
                     ctx.fillStyle = "#f00";
-                    ctx.fillRect(food.x*grid, food.y*grid, grid-2, grid-2);
+                    ctx.fillRect(
+                        food.x * grid,
+                        food.y * grid,
+                        grid - 2,
+                        grid - 2,
+                    );
                 }
 
                 function update() {
-                    const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+                    const head = { x: snake[0].x + dx, y: snake[0].y + dy };
                     if (head.x === food.x && head.y === food.y) {
                         score++;
-                        food = {x: Math.floor(Math.random() * (canvas.width/grid)), y: Math.floor(Math.random() * (canvas.height/grid))};
+                        food = {
+                            x: Math.floor(
+                                Math.random() * (canvas.width / grid),
+                            ),
+                            y: Math.floor(
+                                Math.random() * (canvas.height / grid),
+                            ),
+                        };
                     } else snake.pop();
                     snake.unshift(head);
-                    if (head.x < 0 || head.x >= canvas.width/grid || head.y < 0 || head.y >= canvas.height/grid || snake.slice(1).some(p => p.x === head.x && p.y === head.y)) {
+                    if (
+                        head.x < 0 ||
+                        head.x >= canvas.width / grid ||
+                        head.y < 0 ||
+                        head.y >= canvas.height / grid ||
+                        snake
+                            .slice(1)
+                            .some((p) => p.x === head.x && p.y === head.y)
+                    ) {
                         alert("Game Over! Score: " + score);
-                        snake = [{x: 10, y: 10}];
-                        dx = 1; dy = 0; score = 0;
+                        snake = [{ x: 10, y: 10 }];
+                        dx = 1;
+                        dy = 0;
+                        score = 0;
                     }
                 }
 
-                const loop = setInterval(() => { update(); draw(); }, 100);
+                const loop = setInterval(() => {
+                    update();
+                    draw();
+                }, 100);
 
-                document.addEventListener("keydown", e => {
-                    if (e.key === "ArrowUp" && dy !== 1) { dx=0; dy=-1; }
-                    if (e.key === "ArrowDown" && dy !== -1) { dx=0; dy=1; }
-                    if (e.key === "ArrowLeft" && dx !== 1) { dx=-1; dy=0; }
-                    if (e.key === "ArrowRight" && dx !== -1) { dx=1; dy=0; }
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "ArrowUp" && dy !== 1) {
+                        dx = 0;
+                        dy = -1;
+                    }
+                    if (e.key === "ArrowDown" && dy !== -1) {
+                        dx = 0;
+                        dy = 1;
+                    }
+                    if (e.key === "ArrowLeft" && dx !== 1) {
+                        dx = -1;
+                        dy = 0;
+                    }
+                    if (e.key === "ArrowRight" && dx !== -1) {
+                        dx = 1;
+                        dy = 0;
+                    }
                 });
             }
 
-            // Draggable with touch support
+            // Draggable windows with touch support
             const draggableWindows = document.querySelectorAll(".window");
-            draggableWindows.forEach(win => {
-                let isDragging = false, startX, startY, initialX, initialY;
+            draggableWindows.forEach((win) => {
+                let isDragging = false,
+                    startX,
+                    startY,
+                    initialX,
+                    initialY;
                 const header = win.querySelector(".h-12");
                 if (!header) return;
                 header.style.cursor = "move";
 
-                const startDrag = e => {
-                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-                    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                const startDrag = (e) => {
+                    const clientX = e.touches
+                        ? e.touches[0].clientX
+                        : e.clientX;
+                    const clientY = e.touches
+                        ? e.touches[0].clientY
+                        : e.clientY;
                     if (e.target.classList.contains("traffic-light")) return;
                     isDragging = true;
                     startX = clientX;
                     startY = clientY;
                     initialX = win.offsetLeft;
                     initialY = win.offsetTop;
-                    draggableWindows.forEach(w => w.style.zIndex = 40);
+                    draggableWindows.forEach((w) => (w.style.zIndex = 40));
                     win.style.zIndex = 50;
                 };
 
-                const moveDrag = e => {
+                const moveDrag = (e) => {
                     if (!isDragging) return;
                     e.preventDefault();
-                    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-                    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                    const clientX = e.touches
+                        ? e.touches[0].clientX
+                        : e.clientX;
+                    const clientY = e.touches
+                        ? e.touches[0].clientY
+                        : e.clientY;
                     let newL = initialX + (clientX - startX);
                     let newT = initialY + (clientY - startY);
-                    newL = Math.max(0, Math.min(window.innerWidth - win.offsetWidth, newL));
-                    newT = Math.max(0, Math.min(window.innerHeight - win.offsetHeight, newT));
+                    newL = Math.max(
+                        0,
+                        Math.min(window.innerWidth - win.offsetWidth, newL),
+                    );
+                    newT = Math.max(
+                        0,
+                        Math.min(window.innerHeight - win.offsetHeight, newT),
+                    );
                     win.style.left = newL + "px";
                     win.style.top = newT + "px";
                 };
 
-                const endDrag = () => isDragging = false;
+                const endDrag = () => (isDragging = false);
 
                 header.addEventListener("mousedown", startDrag);
-                header.addEventListener("touchstart", startDrag, { passive: false });
+                header.addEventListener("touchstart", startDrag, {
+                    passive: false,
+                });
                 document.addEventListener("mousemove", moveDrag);
-                document.addEventListener("touchmove", moveDrag, { passive: false });
+                document.addEventListener("touchmove", moveDrag, {
+                    passive: false,
+                });
                 document.addEventListener("mouseup", endDrag);
                 document.addEventListener("touchend", endDrag);
             });
 
-            document.getElementById("msg-input").addEventListener("keypress", e => {
-                if (e.key === "Enter") sendMessage();
-            });
+            document
+                .getElementById("msg-input")
+                .addEventListener("keypress", (e) => {
+                    if (e.key === "Enter") sendMessage();
+                });
         </script>
     </body>
 </html>
